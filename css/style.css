@@ -1,0 +1,36 @@
+:root{
+  --primary:#4f46e5;
+  --secondary:#16a34a;
+  --bg:#f9fafb;
+  --dark:#111827;
+  --text:#374151;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:var(--bg);color:var(--text);line-height:1.6;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--dark);color:#fff;position:sticky;top:0;z-index:10;}
+nav .logo{font-size:1.5rem;font-weight:700;}
+nav ul{list-style:none;display:flex;gap:1.5rem;}
+nav a{color:#fff;text-decoration:none;transition:color .3s;}
+nav a:hover{color:var(--secondary);}
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;color:#fff;text-align:center;padding:2rem;}
+.hero h1{font-size:3rem;margin-bottom:1rem;animation:fadeInDown 1s ease-out;}
+.hero p{font-size:1.25rem;margin-bottom:2rem;animation:fadeInUp 1s 0.2s ease-out both;}
+.btn{display:inline-block;padding:0.75rem 2rem;border-radius:50px;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;transition:background .3s;}
+.btn:hover{background:var(--secondary);}
+section{padding:4rem 2rem;}
+section:nth-child(even){background:#fff;}
+section h2{font-size:2rem;margin-bottom:1rem;text-align:center;}
+section .content{max-width:900px;margin:0 auto;}
+.reveal{opacity:0;transform:translateY(60px);}
+.reveal.active{opacity:1;transform:none;transition:all .6s ease-out;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;}
+.gallery img{width:100%;border-radius:12px;transition:transform .4s;}
+.gallery img:hover{transform:scale(1.05);}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-40px);}to{opacity:1;transform:none;}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:none;}}
+footer{background:var(--dark);color:#fff;text-align:center;padding:2rem;}
+@media(max-width:768px){
+  nav ul{flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--dark);display:none;}
+  nav ul.open{display:flex;}
+  .burger{display:block;cursor:pointer;}
+}
